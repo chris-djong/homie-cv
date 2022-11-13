@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:4.0
+FN:Chris de Jong
+N:de Jong;Chris;;;
+BDAY:06081994
+ORG:Homie SARL-S
+TEL;TYPE=voice:+352 621 480 364
+EMAIL:chris@dejong.lu
+TITLE:Founder & CTO
+URL:www.homie.lu
+END:VCARD

@@ -1,0 +1,65 @@
+.header-row {
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: start;
+    align-items: center;
+}
+
+.columns {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.card {
+    margin: 20px;
+    max-width: 300px;
+    background-color: white;
+}
+
+.social-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 30px 10px 10px 10px;
+
+    .social-button {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+.contact-button {
+    margin: 10px auto;
+}
+
+.profile {
+    border-radius: 50%;
+    max-width: 100px;
+    margin-right: 10px;
+}
+
+.mat-icon {
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+
+.cv-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mt {
+    margin-top: 10px;
+}
+
+.mb {
+    margin-bottom: 10px;
+}
+
+.logo {
+    max-width: 50%;
+    margin: auto;
+}
