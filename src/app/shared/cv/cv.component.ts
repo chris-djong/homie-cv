@@ -35,7 +35,13 @@ export class CvComponent implements OnInit {
 
 
   private generateVCard() {
-
+    console.log(this.base64Image)
+    /*
+    The PHOTO part of the VCARD should have the following format:
+    PHOTO;ENCODING=b;TYPE=JPEG:iVBORw0KGgoAAAA ... bnwwAAAABJRU5ErkJggg==
+    instead of the current PHOTO:base64... 
+    see https://www.nellipalooza.com/blog/2020/3/1/vcf-files-for-sharing-contact-information
+*/
     // Create the virtual contact for download 
     this.vContact = {
       name: {
@@ -62,13 +68,13 @@ export class CvComponent implements OnInit {
         reader.onloadend = () => {
           var base64data = reader.result;
           this.base64Image = '' + base64data;
+          // Generate the VCard only after this 
+          this.generateVCard();
+
         }
 
         reader.readAsDataURL(res);
-      }).add(() => {
-        // Generate the VCard only after this 
-        this.generateVCard();
-      });
+      })
   }
 
 
