@@ -17,7 +17,6 @@ export class CvComponent implements OnInit {
   @Input() linkedin: string = '';
   @Input() facebook: string = '';
   @Input() email: string = '';
-  @Input() birthday: Date | undefined;
 
   public emailLink: string = "";
   public vContact: VCard = {};
@@ -43,7 +42,6 @@ export class CvComponent implements OnInit {
         firstNames: this.firstName,
         lastNames: this.lastName,
       },
-      birthday: this.birthday,
       email: [this.email],
       telephone: [this.phoneNumber],
       title: this.title,
