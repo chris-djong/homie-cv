@@ -61,7 +61,7 @@ export class CvComponent implements OnInit {
 
     // Generate the contactString 
     // And somehow we need to replace the PHOTO: with PHOTO;
-    this.vContactString = VCardFormatter.getVCardAsString(this.vContact).replace('PHOTO:', 'PHOTO;')
+    this.vContactString = VCardFormatter.getVCardAsString(this.vContact).replace('PHOTO:', 'PHOTO;').replace("VERSION:4.0", "VERSION:2.1")
 
 
   }
