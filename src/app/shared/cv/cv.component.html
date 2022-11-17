@@ -1,6 +1,6 @@
 <mat-card class="card">
     <div class="header-row">
-        <img class="profile" [attr.src]="'/assets/' + profile" />
+        <img *ngIf="profile" class="profile" [attr.src]="'/assets/' + profile" />
         <div class="columns">
             <mat-card-title>
                 {{ firstName }} {{ lastName }}</mat-card-title>

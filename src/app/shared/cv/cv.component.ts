@@ -53,29 +53,37 @@ export class CvComponent implements OnInit {
       title: this.title,
       organization: 'Homie SARL-S',
       url: 'www.homie.lu',
-      photo: 'ENCODING=b;TYPE=image/jpeg:' + this.base64Image
+    }
+
+    if (this.base64Image) {
+      this.vContact['photo'] = 'ENCODING=b;TYPE=image/jpeg:' + this.base64Image
     }
 
     // Generate the contactString 
     // And somehow we need to replace the PHOTO: with PHOTO;
     this.vContactString = VCardFormatter.getVCardAsString(this.vContact).replace('PHOTO:', 'PHOTO;')
+
+
   }
 
   // Converts an image to a base64 blob 
   private getBase64Profile() {
-    this.http.get('/assets/' + this.profile, { responseType: 'blob' })
-      .subscribe(res => {
-        const reader = new FileReader();
-        reader.onloadend = () => {
-          var base64data = reader.result;
-          this.base64Image = ('' + base64data).split('data:image/jpeg;base64,')[1];
-          // Generate the VCard only after this 
-          this.generateVCard();
+    if (this.profile) {
+      this.http.get('/assets/' + this.profile, { responseType: 'blob' })
+        .subscribe(res => {
+          const reader = new FileReader();
+          reader.onloadend = () => {
+            var base64data = reader.result;
+            this.base64Image = ('' + base64data).split('data:image/jpeg;base64,')[1];
+            // Generate the VCard only after this 
+            this.generateVCard();
+          }
 
-        }
-
-        reader.readAsDataURL(res);
-      })
+          reader.readAsDataURL(res);
+        })
+    } else {
+      this.generateVCard();
+    }
   }
 
   public downloadVCard() {
