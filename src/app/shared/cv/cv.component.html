@@ -14,7 +14,7 @@
 
     <!-- Email -->
     <span *ngIf="email" class="mt cv-row">
-        <span>
+        <span class="mr">
             {{ email }}
         </span>
         <a [href]="emailLink" mat-raised-button color="accent" target="_top">
@@ -24,7 +24,7 @@
 
     <!-- Phone number -->
     <span *ngIf="phoneNumber" class="mt mb cv-row">
-        <span>
+        <span class="mr">
             {{ phoneNumber }}
         </span>
         <a [href]="'tel:'+phoneNumber" target="_top" mat-raised-button color="accent">
