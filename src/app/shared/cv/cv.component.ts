@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
-import { VCard } from 'ngx-vcard';
+import { VCardFormatter, VCard } from "ngx-vcard";
 
 @Component({
   selector: 'app-cv',
@@ -21,7 +21,8 @@ export class CvComponent implements OnInit {
   public emailLink: string = "";
   public vContact: VCard = {};
   public base64Image: string = '';
-  public contactGenerated: boolean = false;
+  public vContactString: string = '';
+
 
   constructor(
     private http: HttpClient
@@ -35,7 +36,6 @@ export class CvComponent implements OnInit {
 
 
   private generateVCard() {
-    console.log(this.base64Image)
     /*
     The PHOTO part of the VCARD should have the following format:
     PHOTO;ENCODING=b;TYPE=JPEG:iVBORw0KGgoAAAA ... bnwwAAAABJRU5ErkJggg==
@@ -53,11 +53,12 @@ export class CvComponent implements OnInit {
       title: this.title,
       organization: 'Homie SARL-S',
       url: 'www.homie.lu',
-      photo: this.base64Image
+      photo: 'ENCODING=b;TYPE=image/jpeg:' + this.base64Image
     }
 
-    // And set the boolean to true 
-    this.contactGenerated = true;
+    // Generate the contactString 
+    // And somehow we need to replace the PHOTO: with PHOTO;
+    this.vContactString = VCardFormatter.getVCardAsString(this.vContact).replace('PHOTO:', 'PHOTO;')
   }
 
   // Converts an image to a base64 blob 
@@ -67,7 +68,7 @@ export class CvComponent implements OnInit {
         const reader = new FileReader();
         reader.onloadend = () => {
           var base64data = reader.result;
-          this.base64Image = '' + base64data;
+          this.base64Image = ('' + base64data).split('data:image/jpeg;base64,')[1];
           // Generate the VCard only after this 
           this.generateVCard();
 
@@ -75,6 +76,18 @@ export class CvComponent implements OnInit {
 
         reader.readAsDataURL(res);
       })
+  }
+
+  public downloadVCard() {
+    var hiddenElement = document.createElement('a');
+
+    hiddenElement.download = 'contact';
+    var blob = new Blob([this.vContactString], {
+      type: 'text/x-vcard'
+    });
+    hiddenElement.href = window.URL.createObjectURL(blob);
+    hiddenElement.click();
+
   }
 
 

@@ -8,7 +8,7 @@
         </div>
     </div>
 
-    <button [disabled]="!contactGenerated" [vcdDownloadVCard]="vContact" class="contact-button" mat-stroked-button
+    <button [disabled]="!vContactString" (click)="downloadVCard()" class="contact-button" mat-stroked-button
         color="accent">Download
         contact</button>
 
