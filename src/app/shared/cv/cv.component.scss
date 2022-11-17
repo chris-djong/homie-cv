@@ -1,3 +1,6 @@
+@import "src/app/theme/styles/_variables";
+
+
 .header-row {
     display: flex;
     flex-direction: row wrap;
@@ -65,5 +68,10 @@
 
 .logo {
     max-width: 50%;
+    margin: auto;
+}
+
+.link {
+    color: $accent;
     margin: auto;
 }
