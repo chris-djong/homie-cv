@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "app/theme/styles/theme";
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,500,600,700');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import "./app/theme/styles/variables";
 
@@ -8,15 +8,13 @@
 html,
 body {
   height: 100%;
+  margin: 0;
+  font-family: Dosis;
 }
 
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
 
 .container {
-  background: $primary;
+  background-image: linear-gradient(180deg, #f0ffdd, #feffde 70%);
   width: 100%;
   height: 100%;
   position: relative;

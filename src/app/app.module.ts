@@ -13,6 +13,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { NgxVcardModule } from "ngx-vcard";
 import { HttpClientModule } from '@angular/common/http';
+import { AllComponent } from './pages/all/all.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     ChrisComponent,
     LaurentComponent,
-    CvComponent
+    CvComponent,
+    AllComponent
   ],
   imports: [
     BrowserModule,

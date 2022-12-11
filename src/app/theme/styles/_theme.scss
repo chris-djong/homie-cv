@@ -120,9 +120,9 @@ $homie-theme: mat-light-theme($primary-palette, $accent-palette, $warn-palette);
 
 // Next include the font 
 // Set the font of the mat theme 
-$custom-typography: mat.define-typography-config($font-family: 'Montserrat');
+$custom-typography: mat.define-typography-config($font-family: 'Dosis');
 
-$heading-font-family: 'Montserrat';
+$heading-font-family: 'Dosis';
 $homie-typography: mat-typography-config($display-1: mat-typography-level(34pc, $font-family, $heading-font-family),
         $display-2: mat-typography-level(45px, $font-family, $heading-font-family),
         $display-3: mat-typography-level(56px, $font-family, $heading-font-family),
