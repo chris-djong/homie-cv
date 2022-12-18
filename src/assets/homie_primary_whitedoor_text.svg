@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 27.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 391.51 107.96" style="enable-background:new 0 0 391.51 107.96;" xml:space="preserve">
-<!-- Styling -->
+	 viewBox="0 0 391.51 135" style="enable-background:new 0 0 391.51 135;" xml:space="preserve">
 <style type="text/css">
 	@font-face {
 		font-family: Slate;
@@ -34,8 +33,9 @@
 <path class="primary" d="M331.33,10.99l58.81,0v16.9l-37.1,0v16.63l34.49,0V61.7l-34.49,0v18.96l38.48,0l0,17.59l-60.19,0L331.33,10.99z
 	"/>
 <!-- Door -->
-<path class="accent" d="M0,10.35l0,87.26l37.86,10.35L37.86,0L0,10.35z M29.79,56.15c-2.07,0-3.75-1.68-3.75-3.75
+<path class="white" d="M0,10.35l0,87.26l37.86,10.35L37.86,0L0,10.35z M29.79,56.15c-2.07,0-3.75-1.68-3.75-3.75
 	c0-2.07,1.68-3.75,3.75-3.75s3.75,1.68,3.75,3.75C33.54,54.47,31.86,56.15,29.79,56.15z"/>
-<!-- Text  
-<text x="50%" y="130" class="primary text" text-anchor="middle" font-size="1.7em">For professional real estate</text>-->
+<!-- Text -->
+<text x="50%" y="130" class="primary text" text-anchor="middle" font-size="1.7em">For professional real estate</text>
+
 </svg>
